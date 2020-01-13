@@ -1,7 +1,12 @@
 # Cloudflare workers blog
-利用 CloudFlare workers + Github Pages 实现的动态博客
 
-演示地址：https://blog.natfrp.org/
+Cloudflare workers + Github 实现的动态博客系统，使用边缘计算，无需服务器
+
+Workers 是 Cloudflare 提供的边缘计算服务，原本是收费的，现在免费了，每天有 10 万次请求的免费额度。
+
+用户可以使用 JavaScript 编写自己的程序，然后可以直接通过域名访问运行。
+
+演示博客地址：https://blog.natfrp.org/
 
 ## 如何部署
 
@@ -9,7 +14,7 @@
 
 ![img](https://i.natfrp.org/a89af0dd723f5be7a9d779509f06657f.png)
 
-将 workers.js 的内容根据自己情况修改，然后替换 Cloudflare 在线编辑器的默认代码。
+将 workers.js（或者 workers-sakurafrp.js） 的内容根据自己情况修改，然后替换 Cloudflare 在线编辑器的默认代码。
 
 点击 Save and deploy 保存。
 
@@ -77,6 +82,10 @@ touch list.json
 
 现在访问你的 Workers 即可看到文章。
 
+## 自定义 Workers 绑定域名
+
+请阅读此文章：https://blog.natfrp.org/?p=posts%2Fworkers-custom-domain.md
+
 ## JavaScript 资源
 
 如果你仔细查看 workers.js，你会看到一些 https://cn.tql.ink:4443/ 的资源文件
@@ -101,6 +110,12 @@ alias wbs='php /usr/local/tools/wbs.php'
 - wbs u / wbs upload 上传已经写好的文章
 - wbs c / wbs config 重新配置 wbs
 
+## 评论系统
+
+workers-sakurafrp.js 默认使用了 Sakura Comments 评论系统，你可以在我的博客下方留言申请域名白名单，或者更换为其他的评论系统。
+
+文章地址：https://blog.natfrp.org/2 （你还可以在 Issues 里提出，通过任意方式告诉我即可）
+
 ## 开源协议
 
-本项目使用 MIT 协议开源。
+本项目使用 MIT 协议开源，在遵守协议的前提下可任意修改，创作自己的主题等。
